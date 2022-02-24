@@ -1,7 +1,15 @@
-#include "Zombie.h"
+#include "Zombie.hpp"
 
-int main(void) {
+int main() {
 
-    Zombie instance;
-    instance.setZombieName("Falmeida");
+    Zombie instance("alguem");
+    Zombie *instance2;
+
+    instance.announce();
+    instance.randomChump("Carlos");
+
+    instance2 = instance2->newZombie("oassad");
+
+    instance2->announce();
+    delete instance2;
 }
