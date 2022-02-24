@@ -7,3 +7,10 @@ const std::string   Weapon::getType(void) {
 void    Weapon::setType(const std::string newType) {
     this->type = newType;
 }
+
+Weapon::Weapon(std::string  weapon): type(weapon) {
+}
+
+Weapon::Weapon() {  
+    this->type = "Empty";
+}

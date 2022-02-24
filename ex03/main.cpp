@@ -2,17 +2,22 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int main(void) {
-    Weapon  instance;
-    HumanA  putin("Putin");
-    HumanB  biden("Biden");
-
-    instance.setType("AK-47");
-    putin.weapon.setType("AK-47");
-    biden.weapon.setType("Knife");
-
-    std::cout << "Type of weapon: " << instance.getType() << std::endl;
-    putin.attack();
-    biden.attack();
-
+int main()
+{
+{
+    Weapon club = Weapon("crude spiked club");
+    HumanA bob("Bob", club);
+    bob.attack();
+    club.setType("some other type of club");
+    bob.attack();
+}
+{
+    Weapon club = Weapon("crude spiked club");
+    HumanB jim("Jim");
+    jim.setWeapon(club);
+    jim.attack();
+    club.setType("some other type of club");
+    jim.attack();
+}
+return 0;
 }

@@ -11,7 +11,7 @@ class   HumanA {
 
         Weapon  weapon;
         void    attack(void);
-        HumanA(std::string name);
+        HumanA(std::string name, Weapon weapon);
 };
 
 #endif
