@@ -8,11 +8,16 @@ class FileClass
 {
 private:
     std::ifstream   _file;
+    std::string     _fileName;
+    std::string     _fileContent;
     std::string     _s1;
     std::string     _s2;
 
 public:
-    int error(std::string str);
+    int check(void);
+    static int error(std::string str);
+    void    sed(void);
+    void    lineModifier(void);
     FileClass(std::string file, std::string s1, std::string s2);
     ~FileClass();
 };
