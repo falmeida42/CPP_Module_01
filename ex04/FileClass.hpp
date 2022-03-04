@@ -4,6 +4,8 @@
 # include <iostream>
 # include <fstream>
 
+#define SIZE_TMAX (18446744073709551615)
+
 class FileClass
 {
 private:
@@ -16,7 +18,7 @@ private:
 public:
     int check(void);
     static int error(std::string str);
-    void    sed(void);
+    int    sed(void);
     void    lineModifier(void);
     FileClass(std::string file, std::string s1, std::string s2);
     ~FileClass();

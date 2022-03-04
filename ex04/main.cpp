@@ -30,6 +30,7 @@ int main(int argc, char **argv) {
     FileClass   file(argv[1], argv[2], argv[3]);
     if (file.check() == -1)
         return(-1);
-    file.sed();
+    if (file.sed() == -1)
+        return(-1);
    return (0);
 }

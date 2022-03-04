@@ -6,12 +6,24 @@ int FileClass::error(std::string str) {
 }
 
 void    FileClass::lineModifier(void) {
-    if ()
+    size_t  first;
+
+    first = _fileContent.find(_s1);
+    if (first != 18446744073709551615)
+    {
+        _fileContent.erase(first, _s1.length());
+        _fileContent.insert(first, _s2);
+    }   
+    if (_fileContent.find(_s1) != 18446744073709551615)
+        lineModifier();
 }
 
-void    FileClass::sed() {
+int    FileClass::sed() {
     
-     std::ofstream   newFile(_fileName += ".replace");
+    std::ofstream   newFile(_fileName += ".replace");
+
+    if (newFile.fail())
+         return((FileClass::error("File failed")));
 
     while (_file)
     {
@@ -19,6 +31,10 @@ void    FileClass::sed() {
         lineModifier();
         newFile << _fileContent << std::endl;
     }
+
+    if (newFile.is_open())
+        newFile.close();
+    return (0);
 }
 
 FileClass::FileClass(std::string file, std::string s1, std::string s2)
@@ -33,10 +49,12 @@ FileClass::FileClass(std::string file, std::string s1, std::string s2)
 
 int FileClass::check(void) {
     if (_file.fail())
-        return((FileClass::error("error")));
+        return((FileClass::error("File failed")));
     return (0);
 }
 
 FileClass::~FileClass()
 {
+    if (_file.is_open())
+        _file.close();
 }
