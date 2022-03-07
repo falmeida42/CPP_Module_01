@@ -1,28 +1,5 @@
 #include "FileClass.hpp"
 
-
-
-void    lineModifier(std::string &str) {
-
-
-
-}
-
-void    readFile(std::ifstream   &file, std::string argv) {
-    std::string     fileContent;
-    std::ofstream   newFile(argv += ".replace");
-
-    while (file)
-    {
-        getline(file, fileContent);
-        lineModifier(fileContent);
-        newFile << fileContent << std::endl;
-    }
-
-    if (newFile.is_open())
-        newFile.close();
-}
-
 int main(int argc, char **argv) {
 
     if (argc != 4)

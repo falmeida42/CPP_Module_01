@@ -19,13 +19,12 @@ void    FileClass::lineModifier(void) {
 }
 
 int    FileClass::sed() {
-    
+
     std::ofstream   newFile(_fileName += ".replace");
 
     if (newFile.fail())
          return((FileClass::error("File failed")));
-
-    while (_file)
+    while (!_file.eof())
     {
         getline(_file, _fileContent);
         lineModifier();
@@ -50,6 +49,8 @@ FileClass::FileClass(std::string file, std::string s1, std::string s2)
 int FileClass::check(void) {
     if (_file.fail())
         return((FileClass::error("File failed")));
+    if ( _file.peek() == std::ifstream::traits_type::eof() )
+        return((FileClass::error("File empty")));
     return (0);
 }
 
