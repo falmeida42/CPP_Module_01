@@ -9,12 +9,12 @@ void    FileClass::lineModifier(void) {
     size_t  first;
 
     first = _fileContent.find(_s1);
-    if (first != 18446744073709551615)
+    if (first != SIZE_T_MAX)
     {
         _fileContent.erase(first, _s1.length());
         _fileContent.insert(first, _s2);
-    }   
-    if (_fileContent.find(_s1) != 18446744073709551615)
+    } 
+    if (_fileContent.find(_s1) != SIZE_T_MAX)
         lineModifier();
 }
 
@@ -24,11 +24,13 @@ int    FileClass::sed() {
 
     if (newFile.fail())
          return((FileClass::error("File failed")));
-    while (!_file.eof())
+    while (getline(_file, _fileContent))
     {
-        getline(_file, _fileContent);
         lineModifier();
-        newFile << _fileContent << std::endl;
+        if (!_file.eof())
+            newFile << _fileContent << std::endl;
+        else
+             newFile << _fileContent;
     }
 
     if (newFile.is_open())

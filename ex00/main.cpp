@@ -2,13 +2,13 @@
 
 int main() {
 
-    Zombie instance("alguem");
+    Zombie instance("Zombie1");
     Zombie *instance2;
 
     instance.announce();
-    instance.randomChump("Carlos");
+    instance.randomChump("Zombie2");
 
-    instance2 = instance2->newZombie("oassad");
+    instance2 = instance2->newZombie("Zombie3");
 
     instance2->announce();
     delete instance2;

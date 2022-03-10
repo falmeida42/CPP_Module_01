@@ -1,7 +1,6 @@
 #ifndef KAREN_H
 #define KAREN_H
-
-#include <iostream>
+# include <iostream>
 
 class Karen
 {
