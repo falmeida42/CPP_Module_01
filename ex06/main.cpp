@@ -1,17 +1,17 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int main(int argc, char **argv) {
     
-    Karen   karen;
+    Harl   Harl;
 
     switch (argc)
     {
         case 2:
-            karen.complain(argv[1]);
+            Harl.complain(argv[1]);
             break;
     
         default:
-            std::cout << "[ Nothing to Karen filter ]" << std::endl;
+            std::cout << "[ Nothing to Harl filter ]" << std::endl;
             break;
     }
 }

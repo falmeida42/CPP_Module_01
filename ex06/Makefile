@@ -1,6 +1,6 @@
-NAME = karenFilter
+NAME = HarlFilter
 
-SRC = Karen.cpp main.cpp
+SRC = Harl.cpp main.cpp
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
