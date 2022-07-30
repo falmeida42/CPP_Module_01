@@ -3,8 +3,7 @@
 
 # include <iostream>
 # include <fstream>
-
-#define SIZE_TMAX (18446744073709551615)
+# include <limits.h>
 
 class FileClass
 {

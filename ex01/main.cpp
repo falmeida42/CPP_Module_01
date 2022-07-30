@@ -1,10 +1,14 @@
 #include "Zombie.hpp"
+#include "stdio.h"
 
 int main() {
 
     Zombie *instance;
+    
+    std::string name;
 
-    instance = instance->zombieHorde(5, "Zombie1");
+    name  = "carlos";
+    instance = zombieHorde(5, name);
 
     for (int i = 0; i < 5; i++)
          instance[i].announce();

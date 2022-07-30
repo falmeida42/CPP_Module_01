@@ -9,12 +9,12 @@ void    FileClass::lineModifier(void) {
     size_t  first;
 
     first = _fileContent.find(_s1);
-    if (first != SIZE_T_MAX)
+    if (first != SIZE_MAX)
     {
         _fileContent.erase(first, _s1.length());
         _fileContent.insert(first, _s2);
     } 
-    if (_fileContent.find(_s1) != SIZE_T_MAX)
+    if (_fileContent.find(_s1) != SIZE_MAX)
         lineModifier();
 }
 

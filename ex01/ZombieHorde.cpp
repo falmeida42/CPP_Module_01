@@ -9,7 +9,7 @@ Zombie*  Zombie::zombieHorde(int N, std::string name) {
     Zombie *instance;
     
     instance = new Zombie[N];
-    for (int i = 0; i <= N; i++)
+    for (int i = 0; i < N; i++)
         instance[i].setName(name);
 
     return (instance);
